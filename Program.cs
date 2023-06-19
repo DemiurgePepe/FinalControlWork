@@ -39,18 +39,28 @@ string [] CreateStringArray(int size)
 
 void PrintStringArray(string[] array)
 {
-    System.Console.WriteLine("[");
+    System.Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i]+" ");
     }
     System.Console.WriteLine("]");
 }   
-
+string [] FindShortTextInArray(string [] array)
+{
+    string [] newArray = new string[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length<=3) newArray[i]=array[i];
+    }
+    return newArray;
+}
 int size = UserInput("Введите размер массива: ");
 string [] array  = CreateStringArray(size);
 PrintStringArray(array);
-
+System.Console.WriteLine();
+array=FindShortTextInArray(array);
+PrintStringArray(array);
 
 
 

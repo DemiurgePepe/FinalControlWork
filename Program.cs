@@ -27,39 +27,39 @@ string UserInputString(string message)
     // int result = Convert.ToInt32(value);
     return value;
 }
-string [] CreateStringArray(int size)
+string[] CreateStringArray(int size)
 {
-    string [] array = new string[size];
+    string[] array = new string[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] =  UserInputString("Введите текст: ");
+        array[i] = UserInputString("Введите текст массива: ");
     }
     return array;
 }
-
 void PrintStringArray(string[] array)
 {
     System.Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i]+" ");
+        Console.Write(array[i] + " ");
     }
     System.Console.WriteLine("]");
-}   
-string [] FindShortTextInArray(string [] array)
+}
+string[] FindShortTextInArray(string[] array, int number)
 {
-    string [] newArray = new string[array.Length];
+    string[] newArray = new string[array.Length];
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length<=3) newArray[i]=array[i];
+        if (array[i].Length <= number) newArray[i] = array[i];
     }
     return newArray;
 }
 int size = UserInput("Введите размер массива: ");
-string [] array  = CreateStringArray(size);
+int number = UserInput("Введите максимальное число символов в новом массиве: ");
+string[] array = CreateStringArray(size);
 PrintStringArray(array);
 System.Console.WriteLine();
-array=FindShortTextInArray(array);
+array = FindShortTextInArray(array,number);
 PrintStringArray(array);
 
 

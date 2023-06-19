@@ -24,7 +24,6 @@ string UserInputString(string message)
 {
     System.Console.Write(message);
     string value = Console.ReadLine();
-    // int result = Convert.ToInt32(value);
     return value;
 }
 string[] CreateStringArray(int size)
